@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title></title>
+    </head>
+    <body>
+        <p>
+            그냥 for 반복문-어려움<br />
+            포이치 - 배열 전용<br />
+            포인 - 객체전용<br />
+            포오브 - 이터러블 전용<br />
+        </p>
+        <script>
+            let object = { id: "kimjiyunee", age: 100 };
+            for (let i = 0; i < object.id.length; i++) {
+                console.log(object.id[i]);
+            }
+            // let array = ["딸기", "딸기", "딸기", "딸기", "딸기"];
+            // array.forEach();
+            for (let key in object) {
+                console.log(key);
+                console.log(object[key]);
+            }
+            for (let key of object) {
+            }
+        </script>
+    </body>
+</html>
