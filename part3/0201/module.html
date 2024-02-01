@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title></title>
+    </head>
+    <body>
+        <div class="mordor"></div>
+        <custom-input></custom-input>
+        <label>오 이제 바깥건 안빨개짐</label>
+        <script>
+            document.querySelector("mordor").attachShadow({ mode: "open" });
+            document.querySelector("mordor").shadowRoot.innerHTML =
+                "<p>심연에서왔도다</p>";
+            class 클래스 extends HTMLElement {
+                connectedCallback() {
+                    this.attachShadow({ mode: "open" });
+                    this.shadowRoot.innerHTML = `<label>이름을 입력하쇼</label><input>
+      <style> label { color : red } </style>`;
+                }
+            }
+
+            customElements.define("custom-input", 클래스);
+        </script>
+    </body>
+</html>

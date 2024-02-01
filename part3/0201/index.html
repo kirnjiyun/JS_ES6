@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title></title>
+    </head>
+    <body>
+        <custom-input name="이메일"></custom-input>
+        <custom-input name="비번"></custom-input>
+        <script>
+            class 클래스 extends HTMLElement {
+                connectedCallback() {
+                    let name = this.getAttribute("name");
+                    this.innerHTML = "<label>${name}을 입력하쇼</label><input>";
+                }
+
+                static get observedAttributes() {
+                    return ["name"];
+                }
+
+                attributeChangedCallback() {}
+            }
+            customElements.define("custom-input", 클래스);
+        </script>
+    </body>
+</html>
